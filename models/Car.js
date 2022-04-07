@@ -13,7 +13,7 @@ Car.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    model: {
+    Model: {
       type: DataTypes.STRING,
       allowNull: false,
     },

@@ -34,7 +34,16 @@ router.get('/:id', (req, res) => {
 // Add car to database 
 router.post('/', (req, res) => {
     Car.create({
-
+        Model: req.body.model,
+        Sedan: req.body.Sedan,
+        Sports: req.body.Sports,
+        SUV: req.body.SUV,
+        Wagon: req.body.Wagon,
+        Minivan: req.body.Minivan,
+        Pickup: req.body.Pickup,
+        AWD: req.body.AWD,
+        RWD: req.body.RWD,
+        retail_price: req.body.retail_price
     })
     .then(dbCarData => res.json(dbCarData))
     .catch(err => {
@@ -51,7 +60,7 @@ router.put('/', (req, res) => {
 });
 
 // Delete specified car in database
-router.delete('/', (req, res) => {
+router.delete('/:id', (req, res) => {
     Car.destroy({
         where: {
             id: req.params.id

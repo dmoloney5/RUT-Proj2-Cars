@@ -1,4 +1,6 @@
-const seedCars = require("./cars.json");
+//const seedCars = require("./cars.json");
+
+const seedCars = require('./cars-seed');
 
 const sequelize = require("../config/connection");
 
