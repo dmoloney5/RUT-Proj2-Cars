@@ -13,13 +13,13 @@ router.get('/', (req, res) => {
 
 //Get specific car
 router.get('/:id', (req, res) => {
-    User.findOne({
+    Car.findOne({
         where: {
             id: req.params.id
         }
     })
     .then(dbCarData => {
-        if(!dbUserData) {
+        if(!dbCarData) {
             res.status(404).json({ message: 'No car found with this id' });
             return;
         }
