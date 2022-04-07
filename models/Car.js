@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const { model } = require('../config/connection');
 const sequelize = require('../config/connection');
 
-//User model configuration
+//Car model configuration
 class Car extends Model {}
 
 Car.init(
@@ -35,4 +35,4 @@ Car.init(
     }
 );
 
-module.exports = User;
+module.exports = Car;
