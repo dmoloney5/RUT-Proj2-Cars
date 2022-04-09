@@ -1,13 +1,13 @@
 async function newCarHandler(event) {
   event.preventDefault();
 
-  const Model = document.querySelector('insert[name="post-car"]').value;
-  const price = document.querySelector('textarea[name="content"]').value;
+  const model = document.querySelector('insert[name="post-car"]').value;
+  const price = document.querySelector('insert[name="retail_price"]').value;
 
   const response = await fetch(`/api/Car`, {
     method: "POST",
     body: JSON.stringify({
-      title,
+      model,
       price,
     }),
     headers: {
@@ -22,6 +22,4 @@ async function newCarHandler(event) {
   }
 }
 
-document
-  .querySelector("#add-cars-select")
-  .addEventListener("submit", newFormHandler);
+document.querySelector("#add-cars-select").addEventListener("submit", newFormHandler);
