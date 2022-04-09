@@ -34,16 +34,14 @@ router.get('/:id', (req, res) => {
 // Add car to database 
 router.post('/', (req, res) => {
     Car.create({
-        Model: req.body.model,
-        Sedan: req.body.Sedan,
-        Sports: req.body.Sports,
-        SUV: req.body.SUV,
-        Wagon: req.body.Wagon,
-        Minivan: req.body.Minivan,
-        Pickup: req.body.Pickup,
-        AWD: req.body.AWD,
-        RWD: req.body.RWD,
-        retail_price: req.body.retail_price
+        Year: req.body.Year,
+        Make: req.body.Make,
+        Model: req.body.Model,
+        Series: req.body.Series,
+        Color: req.body.Color,
+        Mileage: req.body.Mileage,
+        Price: req.body.Price,
+        Description: req.body.Description
     })
     .then(dbCarData => res.json(dbCarData))
     .catch(err => {
