@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "jest",
-    "seeds": "node seeds/index.js"
+    "seeds": "node seeds/index.js",
+    "build-css": "tailwindcss build src/styles.css -o public/styles.css"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
