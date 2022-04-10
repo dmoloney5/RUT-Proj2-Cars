@@ -1,0 +1,15 @@
+const router = require('express').Router();
+
+router.get('/page1', (req, res) => {
+    res.render("page1")
+})
+
+router.get('/page2', (req, res) => {
+    res.render("page2")
+})
+
+router.get('/login', (req, res) => {
+    res.render("login")
+})
+
+module.exports = router;
