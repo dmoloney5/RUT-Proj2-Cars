@@ -51,9 +51,22 @@ router.post('/', (req, res) => {
 });
 
 // Update specified car details in database
-router.put('/', (req, res) => {
-    Car.update({
-
+router.put('/:id', (req, res) => {
+    Car.update(req.body, {
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbCarData => {
+        if (!dbCarData[0]) {
+            res.status(404).json({ message: 'No car found with this id' });
+            return;
+        }
+        res.json(dbCarData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
     });
 });
 
