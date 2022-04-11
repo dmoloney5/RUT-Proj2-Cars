@@ -13,47 +13,38 @@ Car.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    Year: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    Make: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     Model: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    Sedan: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
+    Series: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
-    Sports: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
+    Color: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
-    SUV: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
+    Mileage: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
-    Wagon: {
-      type: DataTypes.BOOLEAN,
-
-      allowNull: false,
-    },
-    Minivan: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
-    Pickup: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
-    AWD: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
-    RWD: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
-    retail_price: {
+    Price: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    Description: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    }
   },
   {
     sequelize,
