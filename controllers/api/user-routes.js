@@ -18,13 +18,24 @@ router.post('/', (req, res) => {
 User.create({
     username: req.body.username,
     email: req.body.email,
+    phone: req.body.phone,
+    location: req.body.location,
     password: req.body.password
     })
-    .then(dbUserData => res.json(dbUserData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+    .then(dbUserData => {
+        req.session.save(() => {
+            req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.username;
+            req.session.loggedIn = true;
+
+            res.json(dbUserData);
+        });
+    })
+    // .then(dbUserData => res.json(dbUserData))
+    // .catch(err => {
+    //     console.log(err);
+    //     res.status(500).json(err);
+    //});
 });
 
 // Login Route
@@ -43,7 +54,15 @@ router.post('/login', (req, res) => {
             res.status(400).json({ message: 'Incorrect password!' });
             return;
         }
-        res.json({ user: dbUserData, message: 'You are now logged in!' });
+
+        req.session.save(() => {
+            // session variables
+            req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.username;
+            req.session.loggedIn = true;
+
+            res.json({ user: dbUserData, message: 'You are now logged in!' });
+        });
     });
 });
 

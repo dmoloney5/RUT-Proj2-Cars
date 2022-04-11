@@ -31,6 +31,14 @@ User.init(
                 isEmail: true
             }
         },
+        phone: {
+            type: DataTypes.BIGINT,
+            allowNull: false,
+        },
+        location: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         password: {
             type: DataTypes.STRING,
             allowNull: false,
