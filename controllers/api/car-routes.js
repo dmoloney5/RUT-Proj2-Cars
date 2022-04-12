@@ -3,7 +3,12 @@ const { Car, User } = require('../../models');
 
 // Get all cars in database
 router.get('/', (req, res) => {
-    Car.findAll()
+    Car.findAll({
+        include: {
+            model: User,
+            attributes: ['username', 'email', 'phone', 'location']
+        }
+    })
     .then(dbCarData => res.json(dbCarData))
     .catch(err => {
         console.log(err);
@@ -16,7 +21,14 @@ router.get('/:id', (req, res) => {
     Car.findOne({
         where: {
             id: req.params.id
-        }
+        },
+        attributes:['id', 'Year', 'Make', 'Model', 'Series', 'Color', 'Mileage', 'Price'],
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
     })
     .then(dbCarData => {
         if(!dbCarData) {
@@ -41,7 +53,8 @@ router.post('/', (req, res) => {
         Color: req.body.Color,
         Mileage: req.body.Mileage,
         Price: req.body.Price,
-        Description: req.body.Description
+        Description: req.body.Description,
+        user_id: req.body.user_id
     })
     .then(dbCarData => res.json(dbCarData))
     .catch(err => {
