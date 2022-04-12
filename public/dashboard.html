@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,27 +8,31 @@
   <link href="./styles.css" rel="stylesheet">
   <title>Dashboard</title>
 </head>
-<body>
+
+<body class="bg-white">
   <nav></nav>
 
   <main>
-    <header class="flex bg-lime-600">
-      <h1>Dashboard</h1>
+    <header class="bg-gray-600">
+      <h1 class="text-3xl p-3 text-white">Dashboard</h1>
     </header>
 
-    <!-- counts number of cars saved for this user-->
-    <!-- include link or button to saved cars?-->
-    <div id="count-saved"></div>
-    <!-- most popular model saved for this user-->
-    <div id="popular-make"></div>
-    <!-- most popular body style saved for this user-->
-    <div id="popular-body"></div>
+    <div class="p-3 grid place-items-center">
+      <!-- counts number of cars saved for this user-->
+      <!-- include link or button to saved cars?-->
+      <div id="count-saved" class="rounded bg-gray-300"></div>
+      <!-- most popular model saved for this user-->
+      <div id="popular-make" class="rounded bg-gray-300"></div>
+      <!-- most popular body style saved for this user-->
+      <div id="popular-body" class="rounded bg-gray-300"></div>
+    </div>
 
-    <footer class="flex bg-lime-600">
+    <footer class="w-full bg-gray-600 text-white p-3 fixed bottom-0">
       @A-to-B All Rights Reserved
     </footer>
   </main>
 
 </body>
 <script src="https://cdn.tailwindcss.com"></script>
+
 </html>
