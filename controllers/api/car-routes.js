@@ -3,7 +3,12 @@ const { Car, User } = require('../../models');
 
 // Get all cars in database
 router.get('/', (req, res) => {
-    Car.findAll()
+    Car.findAll({
+        include: {
+            model: User,
+            attributes: ['username', 'email', 'phone', 'location']
+        }
+    })
     .then(dbCarData => res.json(dbCarData))
     .catch(err => {
         console.log(err);
