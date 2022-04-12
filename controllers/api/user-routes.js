@@ -1,14 +1,46 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Car } = require('../../models');
 const bcrypt = require('bcrypt');
 
 router.get('/', (req, res) => {
 User.findAll({
-    attributes: { exclude: ['password'] }
+    attributes: { exclude: ['password'] },
+    include: [
+        {
+            model: Car,
+            attributes: ['Year', 'Make', 'Model', 'Series', 'Mileage', 'Price']
+        }
+    ]
 })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
         console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+router.get('/:id', (req, res) => {
+    User.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: ['id', 'username', 'email', 'phone', 'location'],
+        include: [
+            {
+                model: Car,
+                attributes: ['Year', 'Make', 'Model', 'Series']
+            }
+        ]
+    })
+    .then(dbUserData => {
+        if (!dbUserData) {
+            res.status(404).json({ message: 'No user found with this id' });
+            return;
+        }
+        res.json(dbUserData);
+    })
+    .catch(err => {
+        console.log(err)
         res.status(500).json(err);
     });
 });
