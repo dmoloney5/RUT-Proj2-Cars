@@ -1,16 +1,11 @@
 module.exports = {
 
+  darkMode: 'class',
     content: ["./public/*.{html,js}"],
     theme: {
       extend: {},
     },
-    plugins: [],
+    plugins: [
+      require('flowbite/plugin')
+    ],
   }
-=======
-  content: [],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-
