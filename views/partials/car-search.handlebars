@@ -1,0 +1,112 @@
+
+    <header class="bg-gray-600">
+      <h1 class="text-3xl p-3 text-white">Car Search</h1>
+    </header>
+
+    <div class="grid place-items-center">
+      <div id="search-menu" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 p-3">
+        <div id="make-menu" class="rounded bg-gray-300 p-3">
+          <label for="make">Choose a make:</label>
+          <select name="make" id="make" class="form-select 
+          block w-full px-3 py-1.5 text-base font-normal text-gray-700
+          bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300
+          rounded transition ease-in-out m-0
+          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+            <option value="All">All</option>
+            <option value="Acura">Acura</option>
+            <option value="Audi">Audi</option>
+            <option value="BMW">BMW</option>
+            <option value="Buick">Buick</option>
+            <option value="Cadillac">Cadillac</option>
+            <option value="Chevrolet">Chevrolet</option>
+            <option value="Chrysler">Chrysler</option>
+            <option value="Dodge">Dodge</option>
+            <option value="Ford">Ford</option>
+            <option value="GMC">GMC</option>
+            <option value="Honda">Honda</option>
+            <option value="Hyundai">Hyundai</option>
+            <option value="Infiniti">Infiniti</option>
+            <option value="Jaguar">Jaguar</option>
+            <option value="Jeep">Jeep</option>
+            <option value="Kia">Kia</option>
+            <option value="Land Rover">Land Rover</option>
+            <option value="Lexus">Lexus</option>
+            <option value="Lincoln">Lincoln</option>
+            <option value="Mazda">Mazda</option>
+            <option value="Mercedes">Mercedes</option>
+            <option value="Mitsubishi">Mitsubishi</option>
+            <option value="Nissan">Nissan</option>
+            <option value="Porsche">Porsche</option>
+            <option value="Ram">Ram</option>
+            <option value="Subaru">Subaru</option>
+            <option value="Tesla">Tesla</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Volkswagen">Volkswagen</option>
+            <option value="Volvo">Volvo</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div id="models" class="rounded bg-gray-300 p-3">
+          <label for="model">Choose a model:</label>
+          <!-- add js to cycle thru models based on chosen make-->
+        </div>
+        <div id="mileages" class="rounded bg-gray-300 p-3">
+          <label for="mileage">Choose a mileage range:</label>
+          <select name="mileage" id="mileage" class="form-select 
+          block w-full px-3 py-1.5 text-base font-normal text-gray-700
+          bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300
+          rounded transition ease-in-out m-0
+          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+            <option value="Any">Any</option>
+            <option value="Less than 50,000">Less than 50,000k</option>
+            <option value="50,000 to 60,000">50,000 to 60,000k</option>
+            <option value="60,000 to 70,000">60,000 to 70,000k</option>
+            <option value="70,000 to 80,000">70,000 to 80,000k</option>
+            <option value="80,000 to 90,000">80,000 to 90,000k</option>
+            <option value="90,000 to 100,000">90,000 to 100,000k</option>
+            <option value="Greater than 100,000">Greater than 100,000k</option>
+          </select>
+        </div>
+        <div id="prices" class="rounded bg-gray-300 p-3">
+          <label for="price">Choose a price range:</label>
+          <select name="price" id="price" class="form-select 
+          block w-full px-3 py-1.5 text-base font-normal text-gray-700
+          bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300
+          rounded transition ease-in-out m-0
+          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+            <option value="Any">Any</option>
+            <option value="Less than 5,000">Less than $5,000</option>
+            <option value="5,000 to 10,000">$5,000 to $10,000</option>
+            <option value="10,000 to 15,000">$10,000 to $15,000</option>
+            <option value="15,000 to 20,000">$15,000 to $20,000</option>
+            <option value="20,000 to 25,000">$20,000 to $25,000</option>
+            <option value="25,000 to 30,000">$25,000 to $30,000</option>
+            <option value="30,000 to 35,000">$30,000 to $35,000</option>
+            <option value="35,000 to 40,000">$35,000 to $40,000</option>
+            <option value="Greater than 50,000">Greater than $50,000</option>
+          </select>
+        </div>
+        <div id="bodys" class="rounded bg-gray-300 p-3">
+          <label for="body">Choose a body style:</label>
+          <select name="body" id="body" class="form-select 
+          block w-full px-3 py-1.5 text-base font-normal text-gray-700
+          bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300
+          rounded transition ease-in-out m-0
+          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+            <option value="Any">Any</option>
+            <option value="Cargo Van">Cargo Van</option>
+            <option value="Convertible">Convertible</option>
+            <option value="Coupe">Coupe</option>
+            <option value="Hatchback">Hatchback</option>
+            <option value="Minivan">Minivan</option>
+            <option value="Passenger Van">Passenger Van</option>
+            <option value="Pickup Truck">Pickup Truck</option>
+            <option value="SUV">SUV</option>
+            <option value="Sedan">Sedan</option>
+            <option value="Wagon">Wagon</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div id="car-display" class="grid grid-cols-1 md:grid-cols-2"></div>

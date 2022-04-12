@@ -12,4 +12,8 @@ router.get('/login', (req, res) => {
     res.render("login")
 })
 
+router.get('/car-search', (req, res) => {
+    res.render("car-search")
+})
+
 module.exports = router;
