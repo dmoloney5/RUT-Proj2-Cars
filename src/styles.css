@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.font-rocksalt {
+  font-family: 'Rock Salt', sans-serif;
+}
