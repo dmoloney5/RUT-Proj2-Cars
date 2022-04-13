@@ -13,7 +13,7 @@ router.get('/car-search', (req, res) => {
 })
 
 router.get('/dashboard', (req, res) => {
-    res.render("Dashboard")
+    res.render("Dashboard",{user:req.session.username})
 })
 
 router.get('/homepage', (req, res) => {

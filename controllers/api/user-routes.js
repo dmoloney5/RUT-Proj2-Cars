@@ -58,6 +58,8 @@ User.create({
         req.session.save(() => {
             req.session.user_id = dbUserData.id;
             req.session.username = dbUserData.username;
+            req.session.email = dbUserData.email;
+            req.session.phone = dbUserData.phone;
             req.session.loggedIn = true;
 
             res.json(dbUserData);
