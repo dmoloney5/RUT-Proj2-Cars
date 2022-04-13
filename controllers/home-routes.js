@@ -2,11 +2,7 @@ const router = require('express').Router();
 const sequelize = require("../config/connection");
 //const withAuth = require("../utils/auth");
 
-<<<<<<< HEAD
-router.get('/login',  (req, res) => {
-=======
 router.get('/login', (req, res) => {
->>>>>>> 82aaf85eeb5600ba2047a17c0e04193f95a81961
     res.render("login")
 })
 
@@ -30,11 +26,7 @@ router.get('/homepage', (req, res) => {
     res.render("homepage")
 })
 
-<<<<<<< HEAD
-router.get('/new-post',  (req, res) => {
-=======
 router.get('/new-post', (req, res) => {
->>>>>>> 82aaf85eeb5600ba2047a17c0e04193f95a81961
     res.render("new-post")
 })
 
