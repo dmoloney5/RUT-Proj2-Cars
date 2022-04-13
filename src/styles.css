@@ -46,6 +46,11 @@ html {
   /* 4 */
 }
 
+.dark {
+  background: #000;
+  color: white;
+}
+
 /*
 1. Remove the margin in all browsers.
 2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
