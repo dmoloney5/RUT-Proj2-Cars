@@ -22,7 +22,7 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        attributes:['id', 'Year', 'Make', 'Model', 'Series', 'Color', 'Mileage', 'Price'],
+        attributes:['id', 'Year', 'Make', 'Model', 'Series', 'Color', 'Mileage', 'Price', 'Description'],
         include: [
             {
                 model: User,
