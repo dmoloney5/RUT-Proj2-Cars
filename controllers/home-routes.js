@@ -1,13 +1,5 @@
 const router = require('express').Router();
 
-router.get('/page1', (req, res) => {
-    res.render("page1")
-})
-
-router.get('/page2', (req, res) => {
-    res.render("page2")
-})
-
 router.get('/login', (req, res) => {
     res.render("login")
 })
@@ -36,8 +28,17 @@ router.get('/add-post', (req, res) => {
     res.render("add-post")
 })
 
+router.get('/edit-post', (req, res) => {
+    res.render("edit-post")
+})
+
 router.get('/single-post', (req, res) => {
     res.render("single-post")
 })
+
+router.get('/your-profile', (req, res) => {
+    res.render("your-profile")
+})
+
 
 module.exports = router;
