@@ -43,6 +43,38 @@ router.get('/:id', (req, res) => {
     });
 });
 
+//Get cars based on query
+router.get('/:make:mileage:price', (req, res) => {
+    let Operator = this.Sequelize.Op;
+    Car.findAll({
+        where: {
+            [Operator.or]:[
+          { make: req.params.Make},
+          { mileage:{[Operator.lte]: req.params.Mileage}},
+          { price:{[Operator.lte]: req.params.Price}}
+            ]
+        },
+        attributes:['Year', 'Make', 'Model', 'Series', 'Color','Mileage', 'Price', 'Description'], //add all car attributes
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
+    })
+    .then(dbCarData => {
+        if(!dbCarData) {
+            res.status(404).json({ message: 'No car found with these attributes' });
+            return;
+        }
+        res.json(dbCarData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
 // Add car to database 
 router.post('/', (req, res) => {
     Car.create({

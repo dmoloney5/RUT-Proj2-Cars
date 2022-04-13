@@ -14,8 +14,8 @@ router.get('/car-search', withAuth, (req, res) => {
     res.render("car-search")
 })
 
-router.get('/dashboard', withAuth, (req, res) => {
-    res.render("Dashboard")
+router.get('/dashboard', (req, res) => {
+    res.render("Dashboard",{user:req.session.username})
 })
 
 router.get('/favorites', withAuth, (req, res) => {
