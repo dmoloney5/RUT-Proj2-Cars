@@ -2,11 +2,23 @@ const router = require('express').Router();
 const sequelize = require("../config/connection");
 const withAuth = require("../utils/auth");
 
-router.get('/login', withAuth, (req, res) => {
+router.get('/', (req, res) => {
+    res.render("homepage")
+})
+
+router.get('/login',  (req, res) => {
+    if(req.session.loggedIn){
+        res.redirect("/dashboard")
+        return;
+    }
     res.render("login")
 })
 
-router.get('/sign-up', withAuth, (req, res) => {
+router.get('/sign-up', (req, res) => {
+    if(req.session.loggedIn){
+        res.redirect("/dashboard")
+        return;
+    }
     res.render("sign-up")
 })
 
