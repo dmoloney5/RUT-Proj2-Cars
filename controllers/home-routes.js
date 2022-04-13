@@ -12,6 +12,10 @@ router.get('/login', (req, res) => {
     res.render("login")
 })
 
+router.get('/sign-up', (req, res) => {
+    res.render("sign-up")
+})
+
 router.get('/car-search', (req, res) => {
     res.render("car-search")
 })
