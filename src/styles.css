@@ -51,6 +51,10 @@ html {
   color: white;
 }
 
+#profile-dropdown {
+  z-index: 1;
+}
+
 
 /*
 1. Remove the margin in all browsers.

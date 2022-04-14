@@ -22,6 +22,9 @@ html {
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 
+#profile-dropdown {
+  z-index: 1;
+}
  
 .dark {
   background: #000;
