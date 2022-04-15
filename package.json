@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "seeds": "node seeds/index.js",
+    "dev": "postcss ./src/styles.css --output ./public/styles.css",
     "watch": "\"nodemon server.js\" \"npm run watch:css\"",
     "watch:css": "tailwindcss -c ./tailwind.config.js -i ./src/styles.css -o ./public/styles.css --watch",
     "build-css": "tailwindcss -c ./tailwind.config.js -i ./src/styles.css -o ./public/styles.css --minify",
