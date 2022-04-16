@@ -28,7 +28,7 @@ router.get('/favorites', (req, res) => {
 })
 
 router.get('/dashboard', (req, res) => {
-    res.render("dashboard")
+    res.render("dashboard", {user:req.session.username})
 })
 
 router.get('/new-post', (req, res) => {
@@ -47,8 +47,13 @@ router.get('/setting', (req, res) => {
     res.render("setting")
 })
 
-router.get('/your-profile', (req, res) => {
-    res.render("your-profile")
+router.get('/profile', (req, res) => {
+    res.render("profile", 
+    {user:req.session.username},
+    {id:req.session.id},
+    {email:req.session.email},
+    {phone:req.session.phone},
+    {location:req.session.location})
 })
 
 router.get('/search-results', (req, res) => {
