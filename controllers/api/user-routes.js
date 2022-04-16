@@ -134,9 +134,6 @@ router.put('/:id', (req, res) => {
             id: req.params.id
         }
     })
-<<<<<<< HEAD
-});
-=======
 })
 
 router.get('/', (req, res) => {
@@ -180,6 +177,5 @@ router.post('/homepage', (req, res) => {
   });
 });
 
->>>>>>> adf89b7e4f1db2dc6c0a9ad2e30ba4be17f27ae0
 
 module.exports = router;
