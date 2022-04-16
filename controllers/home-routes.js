@@ -48,7 +48,7 @@ router.get("/edit-post", (req, res) => {
   res.render("edit-post");
 });
 
-router.get("/setting", async(req, res) => {
+router.get("/settings", async(req, res) => {
      const user = await User.findByPk(req.session.user_id)
   console.log ("USER", user.toJSON())
   res.render("settings", user.toJSON());
