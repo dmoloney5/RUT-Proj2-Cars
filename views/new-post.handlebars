@@ -1,17 +1,17 @@
 <body class="bg-white">
-  <nav></nav>
-
-  <main>
     <header class="bg-gray-600">
       <h1 class="text-3xl p-3 text-white">Sell A Car</h1>
     </header>
 
     <div class="p-3 grid place-items-center">
       <div id="car-upload" class="rounded bg-gray-300 mx-3 grid grid-cols-1">
-        <form id="car-details">
+
+          <div class="rounded bg-gray-300 p-3">
           <label for="year">What year is your vehicle?</label>
           <input type="text" id="year" name="year" placeholder="Car's Year" class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"/>
+          </div>
 
+          <div class="rounded bg-gray-300 p-3">
           <label for="make">What make is your vehicle?</label>
           <select name="make" id="make" class="form-select 
           block w-full px-3 py-1.5 text-base font-normal text-gray-700
@@ -51,33 +51,40 @@
             <option value="Volvo">Volvo</option>
             <option value="Other">Other</option>
           </select>
+          </div>
 
+          <div class="rounded bg-gray-300 p-3">
           <label for="model">What model is your vehicle?</label>
           <input type="text" id="model" name="model" placeholder="Car's Model" class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"/>
+          </div>
 
+          <div class="rounded bg-gray-300 p-3">
           <label for="series">What series is your vehicle's model?</label>
           <input type="text" id="series" name="series" placeholder="Model's Series" class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"/>
+          </div>
 
+          <div class="rounded bg-gray-300 p-3">
           <label for="color">What color is your vehicle?</label>
           <input type="text" id="color" name="color" placeholder="Car's Exterior Color" class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"/>
+          </div>
 
+          <div class="rounded bg-gray-300 p-3">
           <label for="mileage">What mileage is your vehicle?</label>
           <input type="text" id="mileage" name="mileage" placeholder="Car's Mileage" class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"/>
+          </div>
 
+          <div class="rounded bg-gray-300 p-3">
           <label for="price">What is your selling price?</label>
           <input type="text" name="price" id="price" placeholder="Selling Price" class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"/>
+          </div>
 
+          <div class="rounded bg-gray-300 p-3">
           <label for="description">Add a description:</label>
           <input type="text" name="description" id="description" placeholder="Description" class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"/>
+          </div>
 
           <button id="post-submit" type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
-        </form>
       </div>
     </div>
-
-    <footer class="w-full bg-gray-600 text-white p-3 absolute bottom-0">
-      @A-to-B All Rights Reserved
-    </footer>
-  </main>
 
 </body>
