@@ -52,7 +52,7 @@ Car.init(
         key: "id",
       },
       car_img: {
-        type: DataTypes.STRING,
+        type: DataTypes.CHAR,
         allowNull: false
       },
     },
