@@ -44,7 +44,7 @@ router.get("/edit-post", (req, res) => {
 });
 
 router.get("/setting", (req, res) => {
-  res.render("setting");
+  res.render("settings");
 });
 
 router.get("/your-profile", async (req, res) => {
