@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Car } = require('../../models');
 const bcrypt = require('bcrypt');
+const fileUpload = require("express-fileupload");
 
 router.get('/', (req, res) => {
 User.findAll({
@@ -123,6 +124,47 @@ router.put('/:id', (req, res) => {
         }
     })
 })
+
+router.get('/', (req, res) => {
+  connection.query('SELECT * FROM user WHERE id = "1"', (err, rows) => {
+    if (!err) {
+      res.render("index", { rows });
+    }
+    console.log(rows)
+  });
+});
+
+router.post('/homepage', (req, res) => {
+  let sampleFile;
+  let uploadPath;
+
+  if (!req.files || Object.keys(req.files).length === 0) {
+    return res.status(400).send("No files were uploaded.");
+  }
+
+  // name of the input is sampleFile
+  sampleFile = req.files.sampleFile;
+  uploadPath = __dirname + "/upload/" + sampleFile.name;
+
+  console.log(sampleFile);
+
+  // Use mv() to place file on the server
+  sampleFile.mv(uploadPath, function (err) {
+    if (err) return res.status(500).send(err);
+
+    connection.query(
+      'UPDATE user SET profile_img = ? WHERE id ="1"',
+      [sampleFile.name],
+      (err, rows) => {
+        if (!err) {
+          res.redirect("/homepage");
+        } else {
+          console.log(err);
+        }
+      }
+    );
+  });
+});
 
 
 module.exports = router;

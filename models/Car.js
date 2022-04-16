@@ -19,7 +19,7 @@ Car.init(
     },
     Make: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     Model: {
       type: DataTypes.STRING,
@@ -27,15 +27,15 @@ Car.init(
     },
     Series: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     Color: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     Mileage: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
     },
     Price: {
       type: DataTypes.INTEGER,
@@ -43,7 +43,7 @@ Car.init(
     },
     Description: {
       type: DataTypes.TEXT,
-      allowNull: true
+      allowNull: true,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -51,7 +51,11 @@ Car.init(
         model: "user",
         key: "id",
       },
-    },    
+      car_img: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+    },
   },
   {
     sequelize,

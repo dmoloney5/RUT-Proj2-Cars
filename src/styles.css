@@ -51,6 +51,11 @@ html {
   color: white;
 }
 
+#profile-dropdown {
+  z-index: 1;
+}
+
+
 
 /*
 1. Remove the margin in all browsers.
@@ -424,6 +429,8 @@ video {
 /*
 Ensure the default browser behavior of the `hidden` attribute.
 */
+
+
 
 [hidden] {
   display: none;
