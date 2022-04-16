@@ -27,9 +27,9 @@ router.get("/favorites", (req, res) => {
   res.render("favorites");
 });
 
-router.get("/dashboard", (req, res) => {
-  res.render("dashboard");
-});
+router.get('/dashboard', (req, res) => {
+    res.render("dashboard", {user:req.session.username})
+})
 
 router.get("/new-post", (req, res) => {
   res.render("new-post");
