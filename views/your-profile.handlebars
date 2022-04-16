@@ -1,6 +1,11 @@
-<div class="flex flex-col justify-center items-center max-w-sm rounded overflow-hidden shadow-lg">
-    <h3>{{this.username}} Profile Page</h3>
-    
+<div class="grid place-items-center h-screen">
+    <div class="relative inset-x-0 top-0">
+        <h3 class="text-3xl" id="ppage">{{this.username}} Profile Page</h3>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div  class="max-w-lg rounded overflow-hidden shadow-lg" id="profile_card">
   
     {{#if profile_img}}
       <img class="card__image" src="{{this.profile_img}}" alt="User Profile" />
@@ -9,10 +14,11 @@
     {{/if}}
   
      <div class="font-bold text-xl mb-2">{{this.username}}</div>
-    <p class="text-gray-700 text-base">Emali: {{this.email}}</p>
-     <p class="text-gray-700 text-base">Phone: {{this.phone}}</p>
-      <p class="text-gray-700 text-base">Locaation: {{this.location}}</p>
+     <p class"text-gray-700 text-base">Emali: {{this.email}}</p>
+     <p class"text-gray-700 text-base">Phone: {{this.phone}}</p>
+     <p class"text-gray-700 text-base">Locaation: {{this.location}}</p>
       
+  </div>
   </div>
  
 
