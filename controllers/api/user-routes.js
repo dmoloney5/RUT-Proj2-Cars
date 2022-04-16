@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Car } = require('../../models');
+const { User, Car, FavoriteList } = require('../../models');
 const bcrypt = require('bcrypt');
 
 router.get('/', (req, res) => {
@@ -9,7 +9,13 @@ User.findAll({
         {
             model: Car,
             attributes: ['Year', 'Make', 'Model', 'Series', 'Mileage', 'Price']
+        },
+        {
+            model: Car,
+            through: FavoriteList,
+            as:'fav_cars'
         }
+       
     ]
 })
     .then(dbUserData => res.json(dbUserData))
@@ -29,6 +35,11 @@ router.get('/:id', (req, res) => {
             {
                 model: Car,
                 attributes: ['Year', 'Make', 'Model', 'Series']
+            },
+            {
+                model: Car,
+                through: FavoriteList,
+                as:'fav_cars'
             }
         ]
     })
@@ -122,7 +133,6 @@ router.put('/:id', (req, res) => {
             id: req.params.id
         }
     })
-})
-
+});
 
 module.exports = router;
