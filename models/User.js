@@ -44,8 +44,13 @@ User.init(
             allowNull: false,
             validate: {
                 len: [4]
-            }
-        }
+            },
+        profile_img : {
+             type: DataTypes.STRING,
+             allowNull: false
+      },
+        },    
+        
     },
     {
         hooks: {

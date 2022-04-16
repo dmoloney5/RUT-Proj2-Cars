@@ -25,6 +25,10 @@ Post.init(
         model: "user",
         key: "id",
       },
+      car_img: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
     },
   },
   {
