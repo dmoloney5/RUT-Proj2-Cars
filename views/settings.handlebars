@@ -1,0 +1,34 @@
+<body class="bg-white">
+    <header class="bg-gray-600">
+      <h1 class="text-3xl p-3 text-white">{{user}}'s Settings</h1>
+    </header>
+
+    <div class="p-3 grid place-items-center">
+      <div class="rounded bg-gray-300">
+        <label for="username">Change username from {{user}} to: </label>
+        <input type="text" id="username" name="username" />
+      </div>
+
+      <div class="rounded bg-gray-300">
+        <label for="email">Change email from {{email}} to: </label>
+        <input type="email" id="email" name="email" />
+      </div>
+
+      <div class="rounded bg-gray-300">
+        <label for="phone">Change phone number from {{phone}} to: </label>
+        <input type="number" id="phone" name="phone" />
+      </div>
+
+      <div class="rounded bg-gray-300">
+        <label for="location">Change location from {{location}} to: </label>
+        <input type="text" id="location" name="location" />
+      </div>
+
+      <div class="rounded bg-gray-300">
+        <label for="password">Change password to: </label>
+        <input type="text" id="password" name="password" />
+        <input type="text" id="password2" name="password" />
+        <!-- double input field for password to confirm match in js-->
+      </div>
+    </div>
+</body>

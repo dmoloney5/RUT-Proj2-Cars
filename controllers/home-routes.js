@@ -43,8 +43,12 @@ router.get('/edit-post', (req, res) => {
     res.render("edit-post")
 })
 
-router.get('/setting', (req, res) => {
-    res.render("setting")
+router.get('/settings', (req, res) => {
+    res.render("settings",
+    {user:req.session.username},
+    {email:req.session.email},
+    {phone:req.session.phone},
+    {location:req.session.location})
 })
 
 router.get('/profile', (req, res) => {
