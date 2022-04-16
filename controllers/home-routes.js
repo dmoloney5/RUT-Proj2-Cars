@@ -20,7 +20,9 @@ router.get("/", (req, res) => {
 });
 
 router.get("/homepage", (req, res) => {
-  res.render("homepage");
+  res.render("homepage", {
+    loggedIn: req.session.loggedIn
+  });
 });
 
 router.get("/favorites", (req, res) => {
@@ -28,7 +30,10 @@ router.get("/favorites", (req, res) => {
 });
 
 router.get('/dashboard', (req, res) => {
-    res.render("dashboard", {user:req.session.username})
+    res.render("dashboard", {
+      loggedIn:req.session.loggedIn,
+      user:req.session.username
+    })
 })
 
 router.get("/new-post", (req, res) => {
