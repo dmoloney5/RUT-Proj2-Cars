@@ -42,7 +42,10 @@ router.get('/dashboard', (req, res) => {
 
 router.get("/new-post", async (req, res) => {
   const car = await Car.findByPk(req.session.user_id)
-  res.render("new-post", car.toJSON());
+  res.render("new-post", car.toJSON(), {
+    loggedIn: req.session.loggedIn,
+    user: req.session.username
+  });
 });
 
 router.get("/settings", async (req, res) => {
@@ -55,7 +58,10 @@ router.get("/settings", async (req, res) => {
 
 router.get("/your-profile", async (req, res) => {
   const user = await User.findByPk(req.session.user_id)
-  res.render("your-profile", user.toJSON());
+  res.render("your-profile", user.toJSON(), {
+    loggedIn: req.session.loggedIn,
+    user: req.session.username
+  });
 });
 
 module.exports = router;
