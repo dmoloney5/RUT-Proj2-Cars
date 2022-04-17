@@ -21,9 +21,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/homepage", (req, res) => {
-  res.render("homepage", {
-    loggedIn: req.session.loggedIn
-  });
+  res.render("homepage");
 });
 
 router.get("/favorites", (req, res) => {
@@ -43,20 +41,6 @@ router.get('/dashboard', (req, res) => {
 router.get("/new-post", async (req, res) => {
   const car = await Car.findByPk(req.session.user_id)
   res.render("new-post", car.toJSON(), {
-    loggedIn: req.session.loggedIn,
-    user: req.session.username
-  });
-});
-
-router.get("/add-post", (req, res) => {
-  res.render("add-post", {
-    loggedIn: req.session.loggedIn,
-    user: req.session.username
-  });
-});
-
-router.get("/edit-post", (req, res) => {
-  res.render("edit-post", {
     loggedIn: req.session.loggedIn,
     user: req.session.username
   });
