@@ -21,9 +21,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/homepage", (req, res) => {
-  res.render("homepage", {
-    loggedIn: req.session.loggedIn
-  });
+  res.render("homepage");
 });
 
 router.get("/favorites", (req, res) => {
