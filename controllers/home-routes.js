@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const { User, Car } = require("../models");
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const path = require("path");
@@ -37,7 +37,7 @@ router.get('/dashboard', (req, res) => {
     })
 })
 
-router.get("/new-post", (req, res) => {
+router.get("/new-post", async(req, res) => {
   const car = await Car.findByPk(req.session.user_id)
   res.render("new-post", car.toJSON());
 });
