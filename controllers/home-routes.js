@@ -1,6 +1,7 @@
 const { User } = require("../models");
 const router = require("express").Router();
 const sequelize = require("../config/connection");
+const path = require("path");
 //const withAuth = require("../utils/auth");
 
 router.get("/login", (req, res) => {
