@@ -47,10 +47,10 @@ router.get("/new-post", withAuth, async (req, res) => {
 });
 
 router.get("/settings", withAuth, async (req, res) => {
-  // const user = await User.findByPk(req.session.user_id)
+  const user = await User.findByPk(req.session.user_id)
   res.render("settings", {
     loggedIn: req.session.loggedIn,
-    user: req.session.username
+    user: user.toJSON()
   });
 });
 
