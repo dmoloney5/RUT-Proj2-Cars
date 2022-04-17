@@ -42,10 +42,7 @@ router.get('/dashboard', (req, res) => {
 
 router.get("/new-post", async (req, res) => {
   const car = await Car.findByPk(req.session.user_id)
-  res.render("new-post", car.toJSON(), {
-    loggedIn: req.session.loggedIn,
-    user: req.session.username
-  });
+  res.render("new-post", car.toJSON());
 });
 
 router.get("/add-post", (req, res) => {
