@@ -78,12 +78,4 @@ router.get("/your-profile", async (req, res) => {
   });
 });
 
-router.get("/search-results", (req, res) => {
-  res.render("Search-results");
-});
-
-router.get("/product", (req, res) => {
-  res.render("product");
-});
-
 module.exports = router;
