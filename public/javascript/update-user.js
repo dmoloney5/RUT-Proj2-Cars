@@ -8,15 +8,32 @@ async function userUpdateHandler(event) {
     const password = document.querySelector('input[name="password"]').value.trim();
     //const id = req.session.user_id
 
+    let body = {};
+
+    if(username) {
+      body.username = username;
+    }
+
+    if(email) {
+      body.email = email;
+    }
+
+    if(phone) {
+      body.phone = phone;
+    }
+
+    if(location) {
+      body.location = location;
+    }
+
+    if(password) {
+      body.password = password;
+    }
+    
+
     const response = await fetch('/api/users/:id', {
       method: 'PUT',
-      body: JSON.stringify({
-        username,
-        email,
-        phone,
-        location,
-        password
-      }),
+      body: JSON.stringify(body),
       headers: {
         'Content-Type': 'application/json'
       }
