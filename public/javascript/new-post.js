@@ -1,35 +1,35 @@
 document.getElementById("post-submit").addEventListener("click", () => {
-  event.preventDefault();
+  //event.preventDefault();
   console.log("clicked");
 
-  const year = document.getElementById("year").value;
-  const make = document.getElementById("make").value;
-  const model = document.getElementById("model").value;
-  const series = document.getElementById("series").value;
-  const color= document.getElementById("color").value;
-  const mileage = document.getElementById("mileage").value;
-  const price = document.getElementById("price").value;
-  const description = document.getElementById("description").value;
+  const Year = document.getElementById("year").value;
+  const Make = document.getElementById("make").value;
+  const Model = document.getElementById("model").value;
+  const Series = document.getElementById("series").value;
+  const Color= document.getElementById("color").value;
+  const Mileage = document.getElementById("mileage").value;
+  const Price = document.getElementById("price").value;
+  const Description = document.getElementById("description").value;
 
-  const response = await fetch(`/api/Car`, {
+  const response = await fetch(`/api/cars`, {
     method: "POST",
-    body: JSON.stringify({
-      year,
-      make,
-      model,
-      series,
-      color,
-      mileage,
-      price,
-      description
-    }),
     headers: {
       "Content-Type": "application/json",
     },
+    body: JSON.stringify({
+      Year,
+      Make,
+      Model,
+      Series,
+      Color,
+      Mileage,
+      Price,
+      Description
+    }),
   });
   if (response.ok) {
     console.log("success");
-
+    alert("Your car has successfully been posted!");
     document.location.replace("/dashboard");
   } else {
     alert(response.statusText);
