@@ -1,6 +1,7 @@
 const { User } = require("../models");
 const router = require("express").Router();
 const sequelize = require("../config/connection");
+const path = require("path");
 //const withAuth = require("../utils/auth");
 
 router.get("/login", (req, res) => {
@@ -50,13 +51,11 @@ router.get("/edit-post", (req, res) => {
 
 router.get("/settings", async(req, res) => {
      const user = await User.findByPk(req.session.user_id)
-  console.log ("USER", user.toJSON())
-  res.render("settings", user.toJSON());
+     res.render("settings", user.toJSON());
 });
 
 router.get("/your-profile", async (req, res) => {
   const user = await User.findByPk(req.session.user_id)
-  console.log ("USER", user.toJSON())
   res.render("your-profile", user.toJSON());
 });
 

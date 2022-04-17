@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User, Car, FavoriteList } = require('../../models');
 const bcrypt = require('bcrypt');
-const fileUpload = require("express-fileupload");
+
 
 router.get('/', (req, res) => {
 User.findAll({
@@ -64,7 +64,7 @@ User.create({
     email: req.body.email,
     phone: req.body.phone,
     location: req.body.location,
-    password: req.body.password
+    password: req.body.password,
     })
     .then(dbUserData => {
         req.session.save(() => {
@@ -128,6 +128,7 @@ router.post('/logout', (req, res) => {
 
 // update user
 router.put('/:id', (req, res) => {
+    console.log(req.file);
     User.update(req.body, {
         individualHooks: true,
         where: {
@@ -145,5 +146,7 @@ router.put('/:id', (req, res) => {
         res.status(500).json(err);
     });
 });
+
+
 
 module.exports = router;
