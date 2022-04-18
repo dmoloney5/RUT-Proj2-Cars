@@ -1,6 +1,6 @@
-document.getElementById("post-submit").addEventListener("click", () => {
-  //event.preventDefault();
-  console.log("clicked");
+document.getElementById("post-submit").addEventListener("click", async (event) => {
+  event.preventDefault();
+
 
   const Year = document.getElementById("year").value;
   const Make = document.getElementById("make").value;
@@ -12,6 +12,7 @@ document.getElementById("post-submit").addEventListener("click", () => {
   const Description = document.getElementById("description").value;
 
   if (Year && Make && Model && Series && Color && Mileage && Price) {
+    console.log("clicked",Year,Make,Price,Description,Color,Model,Series);
     const response = await fetch(`/api/cars`, {
       method: "POST",
       headers: {
