@@ -1,6 +1,6 @@
 {{!-- <div class="grid place-items-center h-screen">
     <div class="relative inset-x-0 top-0">
-        <h3 class="text-3xl" id="ppage">{{this.username}} Profile Page</h3>
+        <h3 class="text-3xl" id="ppage">{{user.username}} Profile Page</h3>
     </div>
     <br>
     <br>
@@ -13,16 +13,16 @@
       </div>
        
   
-     <div class="font-bold text-8xl mb-2 content-center">{{this.username}}</div>
-     <p class"text-gray-700">Emali: {{this.email}}</p>
-     <p class"text-gray-700">Phone: {{this.phone}}</p>
-     <p class"text-gray-700">Locaation: {{this.location}}</p>
+     <div class="font-bold text-8xl mb-2 content-center">{{user.username}}</div>
+     <p class"text-gray-700">Emali: {{user.email}}</p>
+     <p class"text-gray-700">Phone: {{user.phone}}</p>
+     <p class"text-gray-700">Locaation: {{user.location}}</p>
       
   </div>
   </div> --}}
 <div class="p-3 justify-center place-items-center"></div>
     <div class="relative inset-x-0 top-0">
-        <h3 class="text-5xl" id="ppage">{{this.username}} Profile Page</h3>
+        <h3 class="text-5xl" id="ppage">{{user.username}} Profile Page</h3>
     </div>
     <div class="main justify-center grid p-10 ">
         <!--card-->
@@ -33,18 +33,18 @@
             </div>
             <!--name-->
             <div class="name text-gray-800 text-6xl font-bold mt-4">
-                <p>{{this.username}}</p>
+                <p>{{user.username}}</p>
             </div>
             <!--username-->
             <div class="username text-4xl">
-                <p>email: {{this.email}}</p>
+                <p>email: {{user.email}}</p>
             </div>
             <!--work-->
             <div class="work text-gray-700 text-4xl">
-                <p>phone: {{this.phone}}</p>
+                <p>phone: {{user.phone}}</p>
             </div>
             <div class="work text-gray-700 text-4xl">
-                <p>Location: {{this.Location}}</p>
+                <p>Location: {{user.Location}}</p>
             </div>
  
 
