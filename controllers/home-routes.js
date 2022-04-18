@@ -32,20 +32,35 @@ router.get('/dashboard', (req, res) => {
 })
 
 router.get("/new-post", withAuth, async (req, res) => {
-  const car = await Car.findByPk(req.session.user_id)
-  res.render("new-post", car.toJSON(), {
+  // const car = await Car.findByPk(req.session.user_id)
+  // res.render("new-post", car.toJSON());
+  res.render("new-post",  {
     loggedIn: req.session.loggedIn
   });
 });
 
-router.get("/settings", async(req, res) => {
-     const user = await User.findByPk(req.session.user_id)
-     res.render("settings", user.toJSON());
+router.get("/settings", withAuth, async (req, res) => {
+  const user = await User.findByPk(req.session.user_id)
+  res.render("settings", {
+    loggedIn: req.session.loggedIn,
+    user: user.toJSON()
+  });
 });
 
-router.get("/your-profile", withAuth, async (req, res) => {
+router.get("/settings", withAuth, async (req, res) => {
+  // const user = await User.findByPk(req.session.user_id)
   const user = await User.findByPk(req.session.user_id)
-  res.render("your-profile", user.toJSON(),{
+  res.render("settings", {
+    loggedIn: req.session.loggedIn,
+    user: user.toJSON()
+  });
+});
+
+
+router.get("/your-profile", withAuth, async (req, res) => {
+  // const user = await User.findByPk(req.session.user_id)
+  // res.render("your-profile", user.toJSON());
+  res.render("your-profile",  {
     loggedIn: req.session.loggedIn
   });
 });
