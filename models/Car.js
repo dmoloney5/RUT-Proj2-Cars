@@ -50,12 +50,8 @@ Car.init(
       references: {
         model: "user",
         key: "id",
-      },
-      car_img: {
-        type: DataTypes.CHAR,
-        allowNull: false
-      },
-    },
+      }
+    }
   },
   {
     sequelize,
