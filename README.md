@@ -33,5 +33,5 @@ A to B is here to help, with a streamlined interface! Create an account to post 
   Nodejs, Express, MySQL, Sequelize, MVC, bcrypt, handlebars, Tailwindcss, flowbite, express-session, and dotenv
   
    ## ScreenShot
-  ![screenshot](https://github.com/dmoloney5/RUT-Week14-Developer-Blog/blob/develop/images/Developer's%20Blog.jpg)
+  ![screenshot](https://github.com/dmoloney5/RUT-Proj2-Cars/blob/main/images/homepage.jpg)
 
