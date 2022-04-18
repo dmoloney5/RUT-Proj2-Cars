@@ -1,7 +1,8 @@
   <header class="bg-gray-600">
     <h1 class="text-3xl p-3 text-white">{{user.username}}'s Settings</h1>
   </header>
-
+<div class="grid place-items-center">
+<div class="rounded bg-gray-300 p-3 max-w-md">
   <form id="submit-form" class="p-3 grid place-items-center">
     <div class="rounded bg-gray-300">
       <label for="username">Change username from {{user.username}} to: </label>
@@ -39,6 +40,6 @@
     <button id="submit-update" type="submit"
       class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
   </form>
-
+</div>
   <script src="/javascript/update-user.js"></script>
 </body>
