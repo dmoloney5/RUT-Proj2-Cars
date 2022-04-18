@@ -1,0 +1,46 @@
+  <header class="bg-gray-600">
+    <h1 class="text-3xl p-3 text-white">{{user.username}}'s Settings</h1>
+  </header>
+<div class="grid place-items-center">
+<div class="rounded bg-gray-300 p-3 max-w-md">
+  <form id="submit-form" class="p-3 grid place-items-center">
+    <div class="rounded bg-gray-300">
+      <label for="username">Change username from {{user.username}} to: </label>
+      <input type="text" id="username" name="username" placeholder="New username"
+        class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full" />
+    </div>
+
+    <div class="rounded bg-gray-300">
+      <label for="email">Change email from {{user.email}} to: </label>
+      <input type="email" id="email" name="email" placeholder="New email"
+        class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full" />
+    </div>
+
+    <div class="rounded bg-gray-300">
+      <label for="phone">Change phone number from {{user.phone}} to: </label>
+      <input type="number" id="phone" name="phone" placeholder="New phone number"
+        class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full" />
+    </div>
+
+    <div class="rounded bg-gray-300">
+      <label for="location">Change location from {{user.location}} to: </label>
+      <input type="text" id="location" name="location" placeholder="New location"
+        class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full" />
+    </div>
+
+    <div class="rounded bg-gray-300">
+      <label for="password">WARNING: Must add a password, same or new, before you submit.</label>
+      <label for="password">Change password to: </label>
+      <input type="text" id="password" name="password" placeholder="New password"
+        class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full" />
+      <input type="text" id="password2" name="password" placeholder="Re-enter your password"
+        class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full" />
+      <!-- double input field for password to confirm match in js-->
+    </div>
+
+    <button id="submit-update" type="submit"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+  </form>
+</div>
+  <script src="/javascript/update-user.js"></script>
+</body>

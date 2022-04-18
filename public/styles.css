@@ -21,14 +21,16 @@ html {
     Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
-
- 
 .dark {
   background: #000;
-  color: white;
+  color: #575757;
 }
-
-
+#profile-dropdown {
+  z-index: 1;
+}
+.title-font {
+  font: 500px;
+}
 body {
   margin: 0;
   line-height: inherit;
@@ -999,6 +1001,15 @@ video {
     display: inline;
   }
   .xl\:pb-32 {
-    padding-bottom: 8rem;
+    padding-top: 8rem;
+    padding-left: 2rem;
   }
+}
+
+#profile_card {
+  position: absolute;
+}
+
+#ppage {
+  
 }

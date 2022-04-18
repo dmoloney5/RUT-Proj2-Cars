@@ -51,6 +51,14 @@ html {
   color: white;
 }
 
+#profile-dropdown {
+  z-index: 1;
+}
+
+.title-font {
+  font: 500px;
+}
+
 
 /*
 1. Remove the margin in all browsers.
@@ -424,6 +432,8 @@ video {
 /*
 Ensure the default browser behavior of the `hidden` attribute.
 */
+
+
 
 [hidden] {
   display: none;
@@ -1393,6 +1403,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 
   .xl\:pb-32 {
-    padding-bottom: 8rem;
+    padding-top: 8rem;
+    padding-left: 2rem;
   }
 }

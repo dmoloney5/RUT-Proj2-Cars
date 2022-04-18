@@ -1,69 +1,58 @@
-const router = require('express').Router();
+const { User, Car } = require("../models");
+const router = require("express").Router();
 const sequelize = require("../config/connection");
+const path = require("path");
 const withAuth = require("../utils/auth");
 
-router.get('/', (req, res) => {
-    res.render("homepage")
-})
+router.get("/login", (req, res) => {
+  res.render("login");
+});
 
-router.get('/login',  (req, res) => {
-    if(req.session.loggedIn){
-        res.redirect("/dashboard")
-        return;
-    }
-    res.render("login")
-})
+router.get("/sign-up", (req, res) => {
+  res.render("sign-up");
+});
 
-router.get('/sign-up', (req, res) => {
-    if(req.session.loggedIn){
-        res.redirect("/dashboard")
-        return;
-    }
-    res.render("sign-up")
-})
+router.get("/car-search", (req, res) => {
+  res.render("car-search");
+});
 
-router.get('/car-search', withAuth, (req, res) => {
-    res.render("car-search")
-})
+router.get("/", (req, res) => {
+  res.redirect("/homepage");
+});
+
+router.get("/homepage", (req, res) => {
+  res.render("homepage");
+});
 
 router.get('/dashboard', (req, res) => {
-    res.render("Dashboard",{user:req.session.username})
+  res.render("dashboard", {
+    loggedIn: req.session.loggedIn,
+    user: req.session.username
+  });
 })
 
-router.get('/favorites', withAuth, (req, res) => {
-    res.render("favorites")
-})
+router.get("/new-post", withAuth, async (req, res) => {
+  // const car = await Car.findByPk(req.session.user_id)
+  // res.render("new-post", car.toJSON());
+  res.render("new-post",  {
+    loggedIn: req.session.loggedIn
+  });
+});
 
-router.get('/homepage', withAuth, (req, res) => {
-    res.render("homepage")
-})
+router.get("/settings", withAuth, async (req, res) => {
+  const user = await User.findByPk(req.session.user_id)
+  res.render("settings", {
+    loggedIn: req.session.loggedIn,
+    user: user.toJSON()
+  });
+});
 
-router.get('/new-post', withAuth, (req, res) => {
-    res.render("new-post")
-})
-
-router.get('/add-post', withAuth, (req, res) => {
-    res.render("add-post")
-})
-
-router.get('/edit-post', withAuth, (req, res) => {
-    res.render("edit-post")
-})
-
-router.get('/setting', withAuth, (req, res) => {
-    res.render("setting")
-})
-
-router.get('/your-profile', withAuth, (req, res) => {
-    res.render("your-profile")
-})
-
-router.get('/search-results', withAuth, (req, res) => {
-    res.render("Search-results")
-})
-
-router.get('/product', withAuth, (req, res) => {
-    res.render("product")
-})
+router.get("/your-profile", withAuth, async (req, res) => {
+  const user = await User.findByPk(req.session.user_id)
+  res.render("your-profile", {
+    loggedIn: req.session.loggedIn,
+    user: user.toJSON()
+  });
+});
 
 module.exports = router;

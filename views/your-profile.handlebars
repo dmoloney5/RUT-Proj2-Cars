@@ -1,4 +1,29 @@
-<div class="relative">
-    <a >Under Constrction</a>
-    <img  class="absolute bottom-50 left-50" src="https://res.cloudinary.com/djyehhigx/image/upload/v1649875205/construct_esbkgw.jpg">
+<div class="p-3 justify-center place-items-center">
+    <div class="relative inset-x-0 top-0">
+        <h3 class="text-5xl" id="ppage">{{user.username}} Profile Page</h3>
+    </div>
+    <div class="main justify-center grid p-10 ">
+        <!--card-->
+        <div class="card bg-white flex flex-col items-center justify-center p-8 shadow-2xl rounded-2xl h-90 w-115">
+            <!--profile-image-->
+            <div class="profile mx-auto rounded-full py-10 w-28">
+                <img src="https://res.cloudinary.com/djyehhigx/image/upload/v1650214027/chuck_z4ecve.jpg" alt="profile">
+            </div>
+            <!--name-->
+            <div class="name text-gray-800 text-6xl font-bold mt-4">
+                <p>{{user.username}}</p>
+            </div>
+            <!--username-->
+            <div class="username text-4xl">
+                <p>email: {{user.email}}</p>
+            </div>
+            <!--work-->
+            <div class="work text-gray-700 text-4xl">
+                <p>phone: {{user.phone}}</p>
+            </div>
+            <div class="work text-gray-700 text-4xl">
+                <p>Location: {{user.location}}</p>
+            </div>
+        </div>
+    </div>
 </div>
