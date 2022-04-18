@@ -24,13 +24,6 @@ router.get("/homepage", (req, res) => {
   res.render("homepage");
 });
 
-router.get("/favorites", (req, res) => {
-  res.render("favorites", {
-    loggedIn: req.session.loggedIn,
-    user: req.session.username
-  });
-});
-
 router.get('/dashboard', (req, res) => {
   res.render("dashboard", {
     loggedIn: req.session.loggedIn,
@@ -39,35 +32,10 @@ router.get('/dashboard', (req, res) => {
 })
 
 router.get("/new-post", withAuth, async (req, res) => {
-  // const car = await Car.findByPk(req.session.user_id)
-  // res.render("new-post", car.toJSON());
-  res.render("new-post",  {
+  const car = await Car.findByPk(req.session.user_id)
+  res.render("new-post", car.toJSON(), {
     loggedIn: req.session.loggedIn
   });
-});
-
-router.get("/favorites", (req, res) => {
-  res.render("favorites");
-});
-
-router.get('/dashboard', (req, res) => {
-    res.render("dashboard", {
-      loggedIn:req.session.loggedIn,
-      user:req.session.username
-    })
-})
-
-router.get("/new-post", async(req, res) => {
-  const car = await Car.findByPk(req.session.user_id)
-  res.render("new-post", car.toJSON());
-});
-
-router.get("/add-post", (req, res) => {
-  res.render("add-post");
-});
-
-router.get("/edit-post", (req, res) => {
-  res.render("edit-post");
 });
 
 router.get("/settings", async(req, res) => {
@@ -75,18 +43,9 @@ router.get("/settings", async(req, res) => {
      res.render("settings", user.toJSON());
 });
 
-router.get("/your-profile", async (req, res) => {
-  const user = await User.findByPk(req.session.user_id)
-  res.render("settings", {
-    loggedIn: req.session.loggedIn,
-    user: user.toJSON()
-  });
-});
-
 router.get("/your-profile", withAuth, async (req, res) => {
-  // const user = await User.findByPk(req.session.user_id)
-  // res.render("your-profile", user.toJSON());
-  res.render("your-profile",  {
+  const user = await User.findByPk(req.session.user_id)
+  res.render("your-profile", user.toJSON(),{
     loggedIn: req.session.loggedIn
   });
 });
