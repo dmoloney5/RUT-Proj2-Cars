@@ -1,28 +1,28 @@
   <header class="bg-gray-600">
-    <h1 class="text-3xl p-3 text-white">{{user.username}}'s Settings</h1>
+    <h1 class="text-3xl p-3 text-white">{{this.username}}'s Settings</h1>
   </header>
 
   <form id="submit-form" class="p-3 grid place-items-center">
     <div class="rounded bg-gray-300">
-      <label for="username">Change username from {{user.username}} to: </label>
+      <label for="username">Change username from {{this.username}} to: </label>
       <input type="text" id="username" name="username" placeholder="New username"
         class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full" />
     </div>
 
     <div class="rounded bg-gray-300">
-      <label for="email">Change email from {{user.email}} to: </label>
+      <label for="email">Change email from {{this.email}} to: </label>
       <input type="email" id="email" name="email" placeholder="New email"
         class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full" />
     </div>
 
     <div class="rounded bg-gray-300">
-      <label for="phone">Change phone number from {{user.phone}} to: </label>
+      <label for="phone">Change phone number from {{this.phone}} to: </label>
       <input type="number" id="phone" name="phone" placeholder="New phone number"
         class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full" />
     </div>
 
     <div class="rounded bg-gray-300">
-      <label for="location">Change location from {{user.location}} to: </label>
+      <label for="location">Change location from {{this.location}} to: </label>
       <input type="text" id="location" name="location" placeholder="New location"
         class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full" />
     </div>
