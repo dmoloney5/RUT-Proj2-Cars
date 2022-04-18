@@ -24,13 +24,6 @@ router.get("/homepage", (req, res) => {
   res.render("homepage");
 });
 
-router.get("/favorites", (req, res) => {
-  res.render("favorites", {
-    loggedIn: req.session.loggedIn,
-    user: req.session.username
-  });
-});
-
 router.get('/dashboard', (req, res) => {
   res.render("dashboard", {
     loggedIn: req.session.loggedIn,
@@ -53,6 +46,16 @@ router.get("/settings", withAuth, async (req, res) => {
     user: user.toJSON()
   });
 });
+
+router.get("/settings", withAuth, async (req, res) => {
+  // const user = await User.findByPk(req.session.user_id)
+  const user = await User.findByPk(req.session.user_id)
+  res.render("settings", {
+    loggedIn: req.session.loggedIn,
+    user: user.toJSON()
+  });
+});
+
 
 router.get("/your-profile", withAuth, async (req, res) => {
   // const user = await User.findByPk(req.session.user_id)
