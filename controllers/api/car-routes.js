@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { Car, User } = require('../../models');
+const Sequelize = require('sequelize');
+const op = Sequelize.Op;
 
 // Get all cars in database
 router.get('/', (req, res) => {
@@ -44,14 +46,14 @@ router.get('/:id', (req, res) => {
 });
 
 //Get cars based on query
-router.get('/:make:mileage:price', (req, res) => {
-    let Operator = this.Sequelize.Op;
+router.get('/:make/:mileage/:price', (req, res) => {
+    //let Operator = this.Sequelize.Op;
     Car.findAll({
         where: {
-            [Operator.or]:[
-          { make: req.params.Make},
-          { mileage:{[Operator.lte]: req.params.Mileage}},
-          { price:{[Operator.lte]: req.params.Price}}
+            [op.or]:[
+          { make: req.params.make},
+          { mileage:{[op.lte]: req.params.mileage}},
+          { price:{[op.lte]: req.params.price}}
             ]
         },
         attributes:['Year', 'Make', 'Model', 'Series', 'Color','Mileage', 'Price', 'Description'], //add all car attributes
@@ -67,7 +69,9 @@ router.get('/:make:mileage:price', (req, res) => {
             res.status(404).json({ message: 'No car found with these attributes' });
             return;
         }
+        var carData = dbCarData.map(car => car.get({plain:true}))
         res.json(dbCarData);
+        // res.render("car-search",{cars: carData })
     })
     .catch(err => {
         console.log(err);
