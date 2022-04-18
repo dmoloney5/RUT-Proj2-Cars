@@ -48,10 +48,10 @@ router.get("/settings", withAuth, async (req, res) => {
 });
 
 router.get("/your-profile", withAuth, async (req, res) => {
-  // const user = await User.findByPk(req.session.user_id)
-  // res.render("your-profile", user.toJSON());
-  res.render("your-profile",  {
-    loggedIn: req.session.loggedIn
+  const user = await User.findByPk(req.session.user_id)
+  res.render("your-profile", {
+    loggedIn: req.session.loggedIn,
+    user: user.toJSON()
   });
 });
 
